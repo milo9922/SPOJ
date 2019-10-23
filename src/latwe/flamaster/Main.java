@@ -5,32 +5,36 @@ import java.util.Scanner;
 class Main {
 
     public static void main(String[] args) {
-        int c;
-        int i = 0;
-        Scanner scanner2 = new Scanner(System.in);
-        try (Scanner scanner = new Scanner(System.in)) {
-            c = scanner.nextInt();
-            while (i <= c) {
-                String word = scanner2.nextLine();
-                shortVersion(word);
-                i++;
-            }
-        }
-
+        shortVersion();
     }
 
-    private static void shortVersion(String word) {
-        char[] array = word.toCharArray();
-        for (int j = 0; array[j] < array.length; ++j) {
-            int counter = 0; // licznik
-            for (; array[j] == array[j + 1]; ++j) {
-                counter++;
+    private static void shortVersion() {
+        Scanner scanner = new Scanner(System.in);
+        int c = scanner.nextInt();
+
+        for (int i = 0; i <= c; i++) {
+            String word = scanner.nextLine();
+            char[] array = word.toCharArray();
+            String result = "";
+            int j = 0;
+            while (j < word.length()) {
+                int counter = 1;
+                char actualCharacter = array[j];
+                j++;
+                for (; j < word.length() && array[j] == actualCharacter; j++) {
+                    counter++;
+                }
+                if (counter == 1) {
+                    result += Character.toString(actualCharacter);
+                } else if (counter == 2) {
+                    result += Character.toString(actualCharacter);
+                    result += Character.toString(actualCharacter);
+                } else {
+                    result += Character.toString(actualCharacter) + counter;
+                }
             }
-            System.out.println(array[j]);
-            if (counter >= 2)
-                System.out.println(counter + 1);
-            if (counter == 1)
-                j--;
+            System.out.println(result);
         }
+
     }
 }
