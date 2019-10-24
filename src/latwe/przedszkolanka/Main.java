@@ -38,14 +38,18 @@ public class Main {
                     case 5:
                         num1 = Integer.parseInt(Character.toString(childrenArray[0]) + Character.toString(childrenArray[1]));
                         num2 = Integer.parseInt(Character.toString(childrenArray[3]) + Character.toString(childrenArray[4]));
+                        break;
 
-                        System.out.println(num1 / commonMultiple(num1, num2) * num2);
+                    default:
+                        num1 = 1;
+                        num2 = 1;
                 }
+                System.out.println(num1 / commonDivide(num1, num2) * num2);
             }
         }
     }
 
-    private static int commonMultiple(int num1, int num2) {
+    private static int commonDivide(int num1, int num2) {
         int pom;
 
         while (num2 != 0) {
@@ -55,4 +59,6 @@ public class Main {
         }
         return num1;
     }
+
+
 }
