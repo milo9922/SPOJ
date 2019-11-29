@@ -9,18 +9,16 @@ public class Main {
         try {
             Scanner scanner = new Scanner(System.in);
             int numberOfSets = scanner.nextInt();
+            scanner.nextLine();
 
             for (int i = 0; i < numberOfSets; i++) {
-                peselValidator(getPesel());
+                String pesel = scanner.nextLine();
+                peselValidator(pesel);
             }
         } catch (Exception ignore) {
         }
     }
 
-    private static String getPesel() throws InputMismatchException {
-        Scanner scanner = new Scanner(System.in);
-        return scanner.nextLine();
-    }
 
     private static void peselValidator(String pesel) {
         try {
