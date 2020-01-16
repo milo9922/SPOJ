@@ -13,6 +13,7 @@ public class Main {
                 int steps = scanner.nextInt();
                 System.out.println(square(steps));
             }
+
         } catch (Exception ignore) {
         }
     }
