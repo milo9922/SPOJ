@@ -1,4 +1,4 @@
-package latwe.NWD;
+package latwe.nwd;
 
 import java.util.Scanner;
 
